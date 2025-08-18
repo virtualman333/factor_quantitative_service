@@ -13,10 +13,10 @@ npm-debug.log*
 /egg-server/coverage/
 
 # Local config (do not commit secrets)
-/scripts/jin10/config.local.json
+/JavaScript/jin10/config.local.json
 
 # legacy SQLite artifacts (no longer used)
-# /scripts/jin10/data.db
-# /scripts/jin10/data.db-wal
-# /scripts/jin10/data.db-shm
+# /JavaScript/jin10/data.db
+# /JavaScript/jin10/data.db-wal
+# /JavaScript/jin10/data.db-shm
 /Python/pybroker/crypto_data_export.csv

@@ -8,8 +8,8 @@
     "dev": "egg-bin dev",
     "start": "egg-scripts start --daemon --title=jin10-egg-api",
     "stop": "egg-scripts stop --title=jin10-egg-api",
-    "start-script-jin10": "node scripts/jin10/index.js",
-    "fetch-jin10-history": "node scripts/jin10/fetch_history.js"
+    "start-script-jin10": "node JavaScript/jin10/index.js",
+    "fetch-jin10-history": "node JavaScript/jin10/fetch_history.js"
   },
   "engines": {
     "node": ">=18"

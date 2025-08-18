@@ -1,0 +1,20 @@
+{
+  "IGNORE_KEYWORDS": ["vip", "一览", "图示", "点击", ">>", "进群", "无门槛", "......", "href"],
+  "HEADLESS": "new",
+  "JIN10_URL": "https://www.jin10.com/",
+  "DEDUP_WINDOW_MS": 3000,
+  "DB_TIMEOUT": 5000,
+  "IS_IMPORTANT": true,
+  "DB_HOST": "47.119.132.60",
+  "DB_PORT": 3306,
+  "DB_NAME": "intelligenceautotrade",
+  "DB_USER": "intelligenceAutoTrade",
+  "DB_PASS": "intelligenceAutoTrade",
+  "JIN10_COOKIES": "UM_distinctid=1989d90c32d7c-08b3c06e8f8d608-4c657b58-1fa400-1989d90c32e2f6; did=5ffe5773-05ad-4866-b4be-75571b6e0122; env=prod; Hm_lvt_522b01156bb16b471a7e2e6422d272ba=1755057135; HMACCOUNT=9CBC6103BD96B125; x-token=; CALENDAR_FAVOR_INDEX_LIST=%5B%5D; qrcode_last_show_date=Thu%20Aug%2014%202025; Hm_lpvt_522b01156bb16b471a7e2e6422d272ba=1755148325",
+  "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0",
+  "X_APP_ID": "bVBF4FyRTn5NJF5n",
+  "X_VERSION": "1.0.0",
+  "HANDLEERROR": "true",
+  "PAGES_LIMIT": 2000,
+  "MAX_TIME": "2023-04-21 17:27:36"
+}

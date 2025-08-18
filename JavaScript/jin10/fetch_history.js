@@ -24,7 +24,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const mysql = require('mysql2/promise');
 
-// ---- 配置文件加载（scripts/jin10/config.local.json > scripts/jin10/config.json）----
+// ---- 配置文件加载（JavaScript/jin10/config.local.json > JavaScript/jin10/config.json）----
 function applyConfigFromFile() {
   try {
     const candidates = ['config.local.json', 'config.json'];
@@ -52,7 +52,7 @@ function applyConfigFromFile() {
 }
 applyConfigFromFile();
 
-// ---- MySQL 初始化（与 scripts/jin10/index.js 保持一致）----
+// ---- MySQL 初始化（与 JavaScript/jin10/index.js 保持一致）----
 const MYSQL_HOST = process.env.DB_HOST || process.env.MYSQL_HOST || '47.119.132.60';
 const MYSQL_PORT = Number(process.env.DB_PORT || process.env.MYSQL_PORT || 3306);
 const MYSQL_USER = process.env.DB_USER || process.env.MYSQL_USER || 'intelligenceAutoTrade';
