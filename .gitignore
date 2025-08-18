@@ -1,0 +1,22 @@
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+npm-debug.log*
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Egg server runtime artifacts
+/run/
+/logs/
+/egg-server/coverage/
+
+# Local config (do not commit secrets)
+/scripts/jin10/config.local.json
+
+# legacy SQLite artifacts (no longer used)
+# /scripts/jin10/data.db
+# /scripts/jin10/data.db-wal
+# /scripts/jin10/data.db-shm
+/Python/pybroker/crypto_data_export.csv
