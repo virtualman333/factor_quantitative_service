@@ -1,4 +1,4 @@
-from numba import np
+import numpy as np
 from pybroker import Strategy, StrategyConfig, ExecContext
 from pybroker.data import DataSource
 import os
