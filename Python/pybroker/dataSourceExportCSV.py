@@ -1,8 +1,9 @@
 import pandas as pd
 from datasets import load_dataset
 
-
-def export_dataset_to_csv(dataset, output_path='crypto_data.csv'):
+# date_type = 'day' or 'min'
+# 控制导出的数据为日数据还是分钟数据
+def export_dataset_to_csv(dataset, output_path='crypto_data.csv',date_type='day'):
     """将Hugging Face数据集转换为PyBroker所需格式并导出为CSV"""
     try:
         # 将数据集转换为Pandas DataFrame
@@ -71,21 +72,22 @@ def export_dataset_to_csv(dataset, output_path='crypto_data.csv'):
                 # 创建日期序列
                 dates = pd.date_range(start='2023-01-01', periods=len(df), freq='D')
                 df['date'] = dates.strftime('%Y-%m-%d')
-        
-        # 重新将date列转换为datetime类型用于筛选
-        df['date'] = pd.to_datetime(df['date'])
-        
-        # 筛选每天只保留一条数据（取每天的第一条）
-        # 创建日期列（只包含日期，不包含时间）
-        df['only_date'] = df['date'].dt.date
-        
-        # 按日期分组，每组只保留第一行数据
-        df = df.groupby('only_date').first().reset_index(drop=True)
-        
-        # 重新格式化日期列
-        df['date'] = df['date'].dt.strftime('%Y-%m-%d')
-        print(f"已筛选数据，每天只保留一条，共 {len(df)} 行数据")
-        
+
+        if date_type == 'day':
+            # 重新将date列转换为datetime类型用于筛选
+            df['date'] = pd.to_datetime(df['date'])
+
+            # 筛选每天只保留一条数据（取每天的第一条）
+            # 创建日期列（只包含日期，不包含时间）
+            df['only_date'] = df['date'].dt.date
+
+            # 按日期分组，每组只保留第一行数据
+            df = df.groupby('only_date').first().reset_index(drop=True)
+
+            # 重新格式化日期列
+            df['date'] = df['date'].dt.strftime('%Y-%m-%d')
+            print(f"已筛选数据，每天只保留一条，共 {len(df)} 行数据")
+
         # 添加volume列（如果不存在）
         if 'volume' not in df.columns:
             df['volume'] = 10000  # 默认成交量
@@ -115,4 +117,4 @@ if __name__ == "__main__":
     
     # 直接导出数据集为CSV
     print("正在导出数据集为CSV格式...")
-    export_dataset_to_csv(ds, 'crypto_data_export.csv')
+    export_dataset_to_csv(ds, 'crypto_data_export.csv','min')
